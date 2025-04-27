@@ -10,4 +10,4 @@ Pythonです。
 6. json
 <br>
 GASのURL
-https://script.google.com/macros/s/AKfycbyrB1Ng4-LVaYrgrkoZptbDKmB4F6HDc9X2vlYGABUEo4udtb89bNtvucq0-opiOI3S/exec
+https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec

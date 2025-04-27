@@ -9,7 +9,7 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
 import diag_ping
-ping_urls = ["1.1.1.1", "example.com", "google.com", "sukesann2000.com"]
+ping_urls = ["1.1.1.1", "example.com", "google.com"]
 ping_outputs, ping_result = diag_ping.check_ping(ping_urls)
 output = defs.printAndAppend(ping_outputs, output)
 output = defs.printAndAppend("", output)
@@ -56,7 +56,7 @@ import requests
 import json
 
 # Send data to Google Apps Script
-url = "https://script.google.com/macros/s/AKfycbyrB1Ng4-LVaYrgrkoZptbDKmB4F6HDc9X2vlYGABUEo4udtb89bNtvucq0-opiOI3S/exec"  # GASのURLを入力
+url = "https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec"  # GASのURLを入力
 headers = {
     "Content-Type": "application/json"
 }
