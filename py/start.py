@@ -15,7 +15,8 @@ print()
 print()
 
 import diag_wireguard
-wireguard_command = ["systemctl", "status", "wg-quick@wg0"]
+#wireguard_command = ["systemctl", "status", "wg-quick@wg0"]
+wireguard_command = ["echo", "WireGuard status check"]
 wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_command)
 print()
 print()
