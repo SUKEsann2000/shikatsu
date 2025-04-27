@@ -55,18 +55,16 @@ print("\n".join(flattened_output))
 import requests
 import json
 
-# 出力データ（`flattened_output`）を送信する
-url = "https://script.google.com/macros/s/AKfycbzDUSRHT1QD5YVtUfYQ2RWJ7-lMTH3BTfQZHLf5LGGKrvINGo9cIy3zRZBC3E_kpIOz/exec"  # GASのURLを入力
+# Send data to Google Apps Script
+url = "https://script.google.com/macros/s/AKfycbyrB1Ng4-LVaYrgrkoZptbDKmB4F6HDc9X2vlYGABUEo4udtb89bNtvucq0-opiOI3S/exec"  # GASのURLを入力
 headers = {
     "Content-Type": "application/json"
 }
 
-# 送信するデータ
 data = {
     "output": flattened_output
 }
 
-# POSTリクエストを送信
 response = requests.post(url, headers=headers, data=json.dumps(data))
 
 if response.status_code == 200:
