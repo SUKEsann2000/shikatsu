@@ -11,3 +11,6 @@ Pythonです。
 <br>
 GASのURL
 https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec
+
+やりたいこと
+1. speedtest-cliを使って速度計測をする
