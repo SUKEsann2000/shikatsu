@@ -7,7 +7,6 @@ def check_port(command, ports):
     output = []
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("Start ufw diagnostics", output)
-    output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("", output)
 
     try:
