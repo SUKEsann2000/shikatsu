@@ -14,3 +14,5 @@ https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9H
 
 やりたいこと
 1. speedtest-cliを使って速度計測をする
+2. GASにPOSTでJSONを送りつけて、GAS側でエラーがあったらメール送信する。
+3. JSONにはstatusのboolも入れる
