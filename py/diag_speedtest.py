@@ -32,7 +32,7 @@ def check_network_speed(err_down_mbps, err_up_mbps):
     output = defs.printAndAppend(f"Server ID: {best['id']}", output)
     output = defs.printAndAppend("", output)
 
-    output = defs.printAndAppend("Error Speed Download: {err_down_mbps} Mbps", output)
+    output = defs.printAndAppend(f"Error Speed Download: {err_down_mbps} Mbps", output)
     output = defs.printAndAppend(f"Error Speed Upload: {err_up_mbps} Mbps", output)
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("", output)

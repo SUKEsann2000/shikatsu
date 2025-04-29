@@ -83,7 +83,8 @@ data = {
     "ping_result": ping_result,
     "wireguard_result": wireguard_result,
     "ufw_result": ufw_result,
-    "ntp_result": ntp_result
+    "ntp_result": ntp_result,
+    "speedtest_result": speedtest_result
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
