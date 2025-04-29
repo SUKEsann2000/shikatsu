@@ -8,6 +8,8 @@ Pythonです。
 4. time
 5. requests
 6. json
+7. speedtest-cli
+8. sys
 <br>
 GASのURL
 https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec
