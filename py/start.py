@@ -51,6 +51,9 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("Finished diagnostics", output)
 output = defs.printAndAppend("************************", output)
+output = defs.printAndAppend("", output)
+output = defs.printAndAppend("", output)
+output = defs.printAndAppend("", output)
 
 
 flattened_output = []
