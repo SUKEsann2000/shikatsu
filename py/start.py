@@ -72,14 +72,20 @@ import datetime
 data_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Send data to Google Apps Script
-url = "https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec"  # GASのURLを入力
+url = "https://script.google.com/macros/s/AKfycbwx00CUM7ilZTcNirO_AzdaswySKmqq9vTBNkSngsr5MaFk24YK-Wn4I64jkE655MML/exec"  # GASのURLを入力
 headers = {
     "Content-Type": "application/json"
 }
 
+for item in flattened_output:
+    if isinstance(item, list):
+        str_list = "\n".join(item)
+    else:
+        str_list = item
+
 data = {
     "timestamp": data_timestamp,
-    "output": flattened_output,
+    "output": str_list,
     "ping_result": ping_result,
     "wireguard_result": wireguard_result,
     "ufw_result": ufw_result,

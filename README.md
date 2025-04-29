@@ -11,8 +11,7 @@ Pythonです。
 7. speedtest-cli
 8. sys
 <br>
-GASのURL
-https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec
+[GASのURL](https://script.google.com/macros/s/AKfycbwx00CUM7ilZTcNirO_AzdaswySKmqq9vTBNkSngsr5MaFk24YK-Wn4I64jkE655MML/exec)
 
 やりたいこと
 1. speedtest-cliを使って速度計測をする
