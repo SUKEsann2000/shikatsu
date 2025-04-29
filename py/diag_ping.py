@@ -7,6 +7,7 @@ from ping3 import ping
 
 def check_ping(urls):
     output = []
+    error_count = 0
 
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("Start pinging",output)
@@ -23,8 +24,11 @@ def check_ping(urls):
             output = defs.printAndAppend(f"{'Success':<10} {url.ljust(max_len)} {res:>10.4f}",output)
         else:
             output = defs.printAndAppend(f"{'Failed':<10} {url.ljust(max_len)} {'-':>10}",output)
-            return "\n".join(output), False
+            error_count += 1
 
+    if error_count == len(urls):
+        output = defs.printAndAppend("Error: All ping tests failed",output)
+        return "\n".join(output), False
     output = defs.printAndAppend("",output)
     output = defs.printAndAppend("Finished Ping Diagnostics",output)
     output = defs.printAndAppend("************************",output)
