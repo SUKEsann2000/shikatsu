@@ -17,7 +17,7 @@ def check_network_speed():
     print(str(down_result) + ',' + str(up_result))
 """
 
-def check_network_speed():
+def check_network_speed(err_down_mbps, err_up_mbps):
     output = []
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("Start network speed diagnostics", output)
@@ -31,6 +31,10 @@ def check_network_speed():
     output = defs.printAndAppend(f"Ping: {best['ping']} ms", output)
     output = defs.printAndAppend(f"Server location: {best['name']}, {best['country']}", output)
     output = defs.printAndAppend(f"Server ID: {best['id']}", output)
+    output = defs.printAndAppend("", output)
+
+    output = defs.printAndAppend("Error Speed Download: {err_down_mbps} Mbps", output)
+    output = defs.printAndAppend(f"Error Speed Upload: {err_up_mbps} Mbps", output)
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend("", output)
 
@@ -42,10 +46,15 @@ def check_network_speed():
     output = defs.printAndAppend(f"Upload speed: {up_result / 1_000_000:.2f} Mbps", output)
 
     output = defs.printAndAppend("", output)
-    
+
     if down_result < 0 or up_result < 0:
         output = defs.printAndAppend("Error: Speed test failed", output)
         return "\n".join(output), False
+    
+    if down_result < err_down_mbps or up_result < err_up_mbps:
+        output = defs.printAndAppend("Warning: Speed test results are below expected thresholds", output)
+        return "\n".join(output), False
+
     output = defs.printAndAppend("", output)
     output = defs.printAndAppend("Finished network speed diagnostics", output)
     output = defs.printAndAppend("************************", output)

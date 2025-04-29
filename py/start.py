@@ -40,6 +40,14 @@ output = defs.printAndAppend(ntp_outputs, output)
 output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
+import diag_speedtest
+speedtest_err_down_mbps = 20
+speedtest_err_up_mbps = 30
+speedtest_outputs, speedtest_result = diag_speedtest.check_network_speed(speedtest_err_down_mbps, speedtest_err_up_mbps)
+output = defs.printAndAppend(speedtest_outputs, output)
+output = defs.printAndAppend("", output)
+output = defs.printAndAppend("", output)
+
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("Finished diagnostics", output)
 output = defs.printAndAppend("************************", output)
