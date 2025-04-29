@@ -14,6 +14,5 @@ Pythonです。
 [GASのURL](https://script.google.com/macros/s/AKfycbwx00CUM7ilZTcNirO_AzdaswySKmqq9vTBNkSngsr5MaFk24YK-Wn4I64jkE655MML/exec)
 
 やりたいこと
-1. speedtest-cliを使って速度計測をする
-2. GASにPOSTでJSONを送りつけて、GAS側でエラーがあったらメール送信する。
-3. JSONにはstatusのboolも入れる
+1. GASにPOSTでJSONを送りつけて、GAS側でエラーがあったらメール送信する。
+2. outputを送ってもjsonに反映されないので、それを修正する
