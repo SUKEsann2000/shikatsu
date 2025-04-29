@@ -17,8 +17,10 @@ output = defs.printAndAppend("", output)
 
 import diag_wireguard
 #wireguard_command = ["systemctl", "status", "wg-quick@wg0"]
-wireguard_command = ["echo", "WireGuard status check"]
-wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_command)
+wireguard_ui_command = ["echo", "WireGuard status check"]
+#wireguard_code_command = ["systemctl", "is-active", "--quiet", "wg-quick@wg0"]
+wireguard_code_command = ["echo", "WireGuard code check"]
+wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_ui_command, wireguard_code_command)
 output = defs.printAndAppend(wireguard_outputs, output)
 output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
@@ -54,6 +56,9 @@ print("\n".join(flattened_output))
 
 import requests
 import json
+import datetime
+
+data_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Send data to Google Apps Script
 url = "https://script.google.com/macros/s/AKfycbxZHkVs90SrvtuSG8x4Z0KYg0m_k37HQkYwlKW9HKpnli8rSGwD1F8RIl9yjwf4HqAZ/exec"  # GASのURLを入力
@@ -62,7 +67,12 @@ headers = {
 }
 
 data = {
-    "output": flattened_output
+    "timestamp": data_timestamp,
+    "output": flattened_output,
+    "ping_result": ping_result,
+    "wireguard_result": wireguard_result,
+    "ufw_result": ufw_result,
+    "ntp_result": ntp_result
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
