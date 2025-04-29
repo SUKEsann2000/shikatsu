@@ -27,8 +27,7 @@ def check_network_speed(err_down_mbps, err_up_mbps):
 
     output = defs.printAndAppend("************************", output)
     output = defs.printAndAppend(f"Best server: {best['host']} ({best['sponsor']})", output)
-    output = defs.printAndAppend(f"Latency: {best['latency']} ms", output)
-    output = defs.printAndAppend(f"Ping: {best['ping']} ms", output)
+    output = defs.printAndAppend(f"Latency(Ping): {best['latency']} ms", output)
     output = defs.printAndAppend(f"Server location: {best['name']}, {best['country']}", output)
     output = defs.printAndAppend(f"Server ID: {best['id']}", output)
     output = defs.printAndAppend("", output)
