@@ -16,10 +16,10 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
 import diag_wireguard
-#wireguard_command = ["systemctl", "status", "wg-quick@wg0"]
-wireguard_ui_command = ["echo", "WireGuard status check"]
-#wireguard_code_command = ["systemctl", "is-active", "--quiet", "wg-quick@wg0"]
-wireguard_code_command = ["echo", "WireGuard code check"]
+wireguard_ui_command = ["systemctl", "status", "wg-quick@wg0"]
+#wireguard_ui_command = ["echo", "WireGuard status check"]
+wireguard_code_command = ["systemctl", "is-active", "--quiet", "wg-quick@wg0"]
+#wireguard_code_command = ["echo", "WireGuard code check"]
 wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_ui_command, wireguard_code_command)
 output = defs.printAndAppend(wireguard_outputs, output)
 output = defs.printAndAppend("", output)
@@ -72,20 +72,14 @@ import datetime
 data_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Send data to Google Apps Script
-url = "https://script.google.com/macros/s/AKfycbwx00CUM7ilZTcNirO_AzdaswySKmqq9vTBNkSngsr5MaFk24YK-Wn4I64jkE655MML/exec"  # GASのURLを入力
+url = "https://script.google.com/macros/s/AKfycbzUYBngBTeGwhot8iVA1yEwV4FufIaZb22KQGntT_m9nKXNdJNsJkWHx7Y0R2sh2nAd/exec"
 headers = {
     "Content-Type": "application/json"
 }
 
-for item in flattened_output:
-    if isinstance(item, list):
-        str_list = "\n".join(item)
-    else:
-        str_list = item
-
 data = {
     "timestamp": data_timestamp,
-    "output": str_list,
+    "output": flattened_output,
     "ping_result": ping_result,
     "wireguard_result": wireguard_result,
     "ufw_result": ufw_result,
@@ -94,7 +88,6 @@ data = {
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
-
 if response.status_code == 200:
     print("Successed to send data")
 else:
