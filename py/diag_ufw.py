@@ -19,7 +19,7 @@ def check_port(command, ports):
 
         for port in ports:
             # ポートが許可されてるか調べる
-            if f"{port}/tcp" in result.stdout or f"{port}/udp" in result.stdout:
+            if f"{port}" in result.stdout:
                 output = defs.printAndAppend(f"{'Allowed':<8} {port:<6}", output)
             else:
                 output = defs.printAndAppend(f"{'Denied':<8} {port:<6}", output)
