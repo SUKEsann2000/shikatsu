@@ -2,10 +2,10 @@
 Pythonです。
 
 必要なライブラリ
-1. pings
+1. ping3
 2. subprocess
 3. ntplib
-4. time
+4. datetime
 5. requests
 6. json
 7. speedtest-cli

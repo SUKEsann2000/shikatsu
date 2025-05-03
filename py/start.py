@@ -16,9 +16,9 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
 import diag_wireguard
-wireguard_ui_command = ["systemctl", "status", "wg-quick@wg0"]
+wireguard_ui_command = "systemctl status wg-quick@wg0"
 #wireguard_ui_command = ["echo", "WireGuard status check"]
-wireguard_code_command = ["systemctl", "is-active", "--quiet", "wg-quick@wg0"]
+wireguard_code_command = "systemctl is-active --quiet wg-quick@wg0"
 #wireguard_code_command = ["echo", "WireGuard code check"]
 wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_ui_command, wireguard_code_command)
 output = defs.printAndAppend(wireguard_outputs, output)
@@ -27,7 +27,7 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
 import diag_ufw
-ufw_command = ["sudo", "ufw", "status"]
+ufw_command = "sudo ufw status"
 ufw_ports = [51820, 443, 53]
 ufw_outputs, ufw_result = diag_ufw.check_port(ufw_command, ufw_ports)
 output = defs.printAndAppend(ufw_outputs, output)
