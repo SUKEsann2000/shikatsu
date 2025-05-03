@@ -53,6 +53,9 @@ import diag_uptime
 uptime_command = "uptime -p"
 err_updays = 1
 uptime_outputs, uptime_result = diag_uptime.check_uptime(uptime_command, err_updays)
+output = defs.printAndAppend(uptime_outputs, output)
+output = defs.printAndAppend("", output)
+output = defs.printAndAppend("", output)
 
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("Finished diagnostics", output)
@@ -91,6 +94,7 @@ data = {
     "wireguard_result": str(wireguard_result),
     "ufw_result": str(ufw_result),
     "ntp_result": str(ntp_result),
+    "uptime_result": str(uptime_result),
     "speedtest_result": str(speedtest_result)
 }
 
