@@ -49,6 +49,11 @@ output = defs.printAndAppend(speedtest_outputs, output)
 output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
+import diag_uptime
+uptime_command = "uptime -p"
+err_updays = 1
+uptime_outputs, uptime_result = diag_uptime.check_uptime(uptime_command, err_updays)
+
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("Finished diagnostics", output)
 output = defs.printAndAppend("************************", output)
