@@ -30,11 +30,11 @@ def check_ntp_server(servers):
 
     output = defs.printAndAppend("", output)
     output += error
-    print("\n".join(error))
+    output = defs.printAndAppend("\n".join(error),output)
 
     output = defs.printAndAppend("", output)
     output = defs.printAndAppend("Finished NTP diagnostics", output)
     output = defs.printAndAppend("************************", output)
     if failCount == len(servers):
-        return output, False
-    return output, True
+        return "\n".join(output), False
+    return "\n".join(output), True

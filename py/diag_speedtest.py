@@ -57,4 +57,4 @@ def check_network_speed(err_down_mbps, err_up_mbps):
     output = defs.printAndAppend("", output)
     output = defs.printAndAppend("Finished network speed diagnostics", output)
     output = defs.printAndAppend("************************", output)
-    return output, True
+    return "\n".join(output), True
