@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 source ~/shikatsu/.venv/bin/activate
 cd ~/shikatsu/py
