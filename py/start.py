@@ -22,6 +22,7 @@ wireguard_code_command = ["systemctl", "is-active", "--quiet", "wg-quick@wg0"]
 #wireguard_code_command = ["echo", "WireGuard code check"]
 wireguard_outputs, wireguard_result = diag_wireguard.check_wireguard(wireguard_ui_command, wireguard_code_command)
 output = defs.printAndAppend(wireguard_outputs, output)
+output = defs.printAndAppend(wireguard_result, output)
 output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
@@ -58,10 +59,11 @@ output = defs.printAndAppend("", output)
 
 flattened_output = []
 for item in output:
-    if isinstance(item, list):
-        flattened_output.extend(item)
+    str_item = str(item)
+    if isinstance(str_item, list):
+        flattened_output.extend(str_item)
     else:
-        flattened_output.append(item)
+        flattened_output.append(str_item)
 
 print("\n".join(flattened_output))
 
@@ -72,19 +74,19 @@ import datetime
 data_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Send data to Google Apps Script
-url = "https://script.google.com/macros/s/AKfycbzUYBngBTeGwhot8iVA1yEwV4FufIaZb22KQGntT_m9nKXNdJNsJkWHx7Y0R2sh2nAd/exec"
+url = "https://script.google.com/macros/s/AKfycbzUhMzXhE5zjCoDZDCyN3AK8d1tzgCxA9dLV6Qs0CZeVB5nTNLFKociWJoYlwd2ma10/exec"
 headers = {
     "Content-Type": "application/json"
 }
 
 data = {
-    "timestamp": data_timestamp,
+    "timestamp": str(data_timestamp),
     "output": flattened_output,
-    "ping_result": ping_result,
-    "wireguard_result": wireguard_result,
-    "ufw_result": ufw_result,
-    "ntp_result": ntp_result,
-    "speedtest_result": speedtest_result
+    "ping_result": str(ping_result),
+    "wireguard_result": str(wireguard_result),
+    "ufw_result": str(ufw_result),
+    "ntp_result": str(ntp_result),
+    "speedtest_result": str(speedtest_result)
 }
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
