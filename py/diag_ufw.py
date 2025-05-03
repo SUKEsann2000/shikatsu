@@ -19,11 +19,11 @@ def check_port(command, ports):
 
         for port in ports:
             # ポートが許可されてるか調べる
-            if f"{port}/tcp" in output or f"{port}/udp" in output:
+            if f"{port}/tcp" in result.stdout or f"{port}/udp" in result.stdout:
                 output = defs.printAndAppend(f"{'Allowed':<8} {port:<6}", output)
             else:
                 output = defs.printAndAppend(f"{'Denied':<8} {port:<6}", output)
-                result_flag = True
+                result_flag = False
     except Exception as e:
         output = defs.printAndAppend(f"error: {e}",output)
         return "\n".join(output), False
