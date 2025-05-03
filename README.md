@@ -16,3 +16,4 @@ Pythonです。
 やりたいこと
 1. GASにPOSTでJSONを送りつけて、GAS側でエラーがあったらメール送信する。
 2. ポートが空いてるか確認する（外側に）
+3. pingのsukesann2000.duckdns.orgが通じるか

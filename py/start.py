@@ -9,7 +9,7 @@ output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
 
 import diag_ping
-ping_urls = ["1.1.1.1", "example.com", "google.com"]
+ping_urls = ["1.1.1.1", "example.com", "google.com", "sukesann2000.duckdns.org"]
 ping_outputs, ping_result = diag_ping.check_ping(ping_urls)
 output = defs.printAndAppend(ping_outputs, output)
 output = defs.printAndAppend("", output)
