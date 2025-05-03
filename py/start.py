@@ -82,7 +82,7 @@ import datetime
 data_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Send data to Google Apps Script
-url = "https://script.google.com/macros/s/AKfycbyzcRIm5pRA_kRDGXYDUgBsnrPeyuUxTtYBEctQ_sd7tknFOcbEfD2LYdit_tnLJOX8/exec"
+url = "https://script.google.com/macros/s/AKfycbwFAnnDMoE_yBiZaWBGCQgtT3pwAvcVAiPLEQh_cYCXRwJsovFo8cff3rGGA8bGnJs_/exec"
 headers = {
     "Content-Type": "application/json"
 }

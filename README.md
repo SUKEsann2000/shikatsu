@@ -11,7 +11,7 @@ Pythonです。
 7. speedtest-cli
 8. sys
 <br>
-[GASのURL](https://script.google.com/macros/s/AKfycbyzcRIm5pRA_kRDGXYDUgBsnrPeyuUxTtYBEctQ_sd7tknFOcbEfD2LYdit_tnLJOX8/exec)
+[GASのURL](https://script.google.com/macros/s/AKfycbwFAnnDMoE_yBiZaWBGCQgtT3pwAvcVAiPLEQh_cYCXRwJsovFo8cff3rGGA8bGnJs_/exec)
 
 やりたいこと
 1. GASにPOSTでJSONを送りつけて、GAS側でエラーがあったらメール送信する。
