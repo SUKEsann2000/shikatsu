@@ -1,6 +1,3 @@
 #!/bin/bash
 
-source ~/shikatsu/.venv/bin/activate
-cd ~/shikatsu/py
-python3 start.py
-deactivate
+/home/user/shikatsu/.venv/bin/python /home/user/shikatsu/py/start.py

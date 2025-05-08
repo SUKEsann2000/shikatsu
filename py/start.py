@@ -1,9 +1,13 @@
 import defs
+import sys
+
+args = sys.argv
 
 output = []
 
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("Start diagstics", output)
+output = defs.printAndAppend("Args: " + str(args), output)
 output = defs.printAndAppend("************************", output)
 output = defs.printAndAppend("", output)
 output = defs.printAndAppend("", output)
@@ -73,7 +77,7 @@ for item in output:
     else:
         flattened_output.append(str_item)
 
-print("\n".join(flattened_output))
+#print("\n".join(flattened_output))
 
 import requests
 import json
@@ -98,8 +102,15 @@ data = {
     "speedtest_result": str(speedtest_result)
 }
 
-response = requests.post(url, headers=headers, data=json.dumps(data))
-if response.status_code == 200:
-    print("Successed to send data")
+if len(args) == 1:
+    formatted = defs.format_data_as_table(data)
+    response = requests.post(url, headers=headers, data=json.dumps(data))
+    if response.status_code == 200:
+        print("Successed to send data")
+    else:
+        print(f"Failed to send data: {response.status_code}")
+    sys.stdout.write(formatted + "\n")
 else:
-    print(f"Failed to send data: {response.status_code}")
+    data["output"] = "\n".join(flattened_output)
+    formatted = defs.format_data_as_table(data)
+    sys.stdout.write(formatted + "\n")
