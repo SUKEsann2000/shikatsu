@@ -3,7 +3,7 @@ import speedtest
 
 def get_speed_test():
     servers = [14623] # IPAのサーバーを選択
-    stest = speedtest.Speedtest(secure=True)
+    stest = speedtest.Speedtest()
     stest.get_servers(servers)
     best = stest.get_best_server()
     return stest, best
