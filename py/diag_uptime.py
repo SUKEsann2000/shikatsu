@@ -15,7 +15,7 @@ def check_uptime(uptime_command, err_updays):
         output = defs.printAndAppend(f"error: {e}",output)
         return "\n".join(output), False
     
-    if "days" in result:
+    if "day" in result:
         # uptimeの値を取得
         days = int(result.split("up")[1].split(",")[0].strip().split()[0])
         if days < err_updays:
