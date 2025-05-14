@@ -55,7 +55,7 @@ output = defs.printAndAppend("", output)
 
 import diag_uptime
 uptime_command = "uptime -p"
-err_updays = 1
+err_updays = 0
 uptime_outputs, uptime_result = diag_uptime.check_uptime(uptime_command, err_updays)
 output = defs.printAndAppend(uptime_outputs, output)
 output = defs.printAndAppend("", output)
